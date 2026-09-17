@@ -63,16 +63,17 @@
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-container">
       <a href="/" class="logo" aria-label="Nu-Fix, LLC home">
-        <img src="../assets/images/nufix-logo.png" alt="Nu-Fix, LLC — Building Maintenance & Restoration" width="180" height="90">
+        <img src="../assets/images/nufix-logo.png" alt="Nu-Fix, LLC — Building Maintenance & Restoration" width="161" height="180">
       </a>
       <ul class="nav-links" role="list">
         <li><a href="/">Home</a></li>
+        <li><a href="/residential/">Residential</a></li>
+        <li><a href="/commercial/">Commercial</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="/service-areas/">Service Areas</a></li>
-        <li><a href="/commercial/">Commercial</a></li>
         <li><a href="/gallery/">Gallery</a></li>
         <li><a href="/about/">About</a></li>
-        <li><a href="tel:2676401778" class="nav-phone">267.640.1778</a></li>
+        <li><a href="/contact/" class="active">Contact</a></li>
         <li><a href="/contact/" class="nav-cta active">Get a Free Quote</a></li>
       </ul>
       <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
@@ -91,11 +92,13 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-close" aria-label="Close menu">&times;</button>
     <a href="/">Home</a>
+    <a href="/residential/">Residential</a>
+    <a href="/commercial/">Commercial</a>
     <a href="/services/">Services</a>
     <a href="/service-areas/">Service Areas</a>
-    <a href="/commercial/">Commercial</a>
     <a href="/gallery/">Gallery</a>
     <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
     <a href="tel:2676401778">267.640.1778</a>
     <a href="/contact/" class="nav-cta">Get a Free Quote</a>
   </div>
@@ -126,6 +129,7 @@
             <form id="contact-form" class="ajax-form" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
               <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
               <input type="hidden" name="_subject" value="New quote request from nu-fix.com">
+              <input type="hidden" name="_cc" value="service@nu-fix.com">
 
               <div class="form-group">
                 <label class="form-label" for="name">Full Name <span aria-hidden="true">*</span></label>
@@ -246,7 +250,7 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-brand">
-        <img src="../assets/images/nufix-logo.png" alt="Nu-Fix, LLC" width="150" height="75">
+        <img src="../assets/images/nufix-logo.png" alt="Nu-Fix, LLC" width="133" height="148">
         <p>Building maintenance and restoration for homeowners and facility managers across PA, NJ, and DE. In business 35 years.</p>
       </div>
       <div>
@@ -254,6 +258,7 @@
         <ul>
           <li><a href="/services/">All Services</a></li>
           <li><a href="/services/roofing-repair/">Roofing Repair</a></li>
+          <li><a href="/residential/">Residential</a></li>
           <li><a href="/commercial/">Commercial</a></li>
           <li><a href="/service-areas/">Service Areas</a></li>
         </ul>
@@ -263,6 +268,7 @@
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/gallery/">Gallery</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
       <div>

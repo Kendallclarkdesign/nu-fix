@@ -85,16 +85,17 @@
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-container">
       <a href="/" class="logo" aria-label="Nu-Fix, LLC home">
-        <img src="assets/images/nufix-logo.png" alt="Nu-Fix, LLC — Building Maintenance & Restoration" width="180" height="90">
+        <img src="assets/images/nufix-logo.png" alt="Nu-Fix, LLC — Building Maintenance & Restoration" width="161" height="180">
       </a>
       <ul class="nav-links" role="list">
         <li><a href="/" class="active">Home</a></li>
+        <li><a href="/residential/">Residential</a></li>
+        <li><a href="/commercial/">Commercial</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="/service-areas/">Service Areas</a></li>
-        <li><a href="/commercial/">Commercial</a></li>
         <li><a href="/gallery/">Gallery</a></li>
         <li><a href="/about/">About</a></li>
-        <li><a href="tel:2676401778" class="nav-phone">267.640.1778</a></li>
+        <li><a href="/contact/">Contact</a></li>
         <li><a href="/contact/" class="nav-cta">Get a Free Quote</a></li>
       </ul>
       <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
@@ -114,11 +115,13 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-close" aria-label="Close menu">&times;</button>
     <a href="/">Home</a>
+    <a href="/residential/">Residential</a>
+    <a href="/commercial/">Commercial</a>
     <a href="/services/">Services</a>
     <a href="/service-areas/">Service Areas</a>
-    <a href="/commercial/">Commercial</a>
     <a href="/gallery/">Gallery</a>
     <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
     <a href="tel:2676401778">267.640.1778</a>
     <a href="/contact/" class="nav-cta">Get a Free Quote</a>
   </div>
@@ -154,6 +157,7 @@
           <form class="ajax-form" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="hidden" name="_subject" value="New quick quote request from nu-fix.com">
+            <input type="hidden" name="_cc" value="service@nu-fix.com">
             <div class="form-group">
               <label class="form-label" for="hero-name">Full Name <span aria-hidden="true">*</span></label>
               <input class="form-input" type="text" id="hero-name" name="name" required autocomplete="name" placeholder="Jane Smith">
@@ -293,20 +297,6 @@
       </div>
     </section>
 
-    <!-- MEET THE OWNER -->
-    <section class="section section-white">
-      <div class="container">
-        <div class="founder-block fade-in">
-          <img src="assets/images/paul-owner.png" alt="Paul, owner of Nu-Fix, LLC" width="140" height="140" loading="lazy">
-          <div>
-            <span class="eyebrow text-blue">Meet the Owner</span>
-            <h2>Paul</h2>
-            <p class="role-tag">Owner, Nu-Fix, LLC</p>
-            <p>Paul runs Nu-Fix the way he always has: answer the phone, show up, and do the job right. Every quote and every crew on every job site is still accountable to him directly, whether it's a single homeowner's roof or a multi-building campus contract.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- RECENT WORK -->
     <section class="section section-light">
@@ -319,8 +309,8 @@
         <div class="grid-3">
           <img class="project-photo square fade-in" src="assets/images/gallery/roofing-cedar-shake-tudor-copper-flashing.jpg" alt="New cedar shake roof with copper flashing on a stone Tudor-style home" width="1320" height="776" loading="lazy">
           <img class="project-photo square fade-in" src="assets/images/gallery/roofing-slate-multi-dormer-aerial.jpg" alt="Aerial view of a new slate roof with multiple dormers" width="1320" height="982" loading="lazy">
-          <img class="project-photo square fade-in" src="assets/images/gallery/roofing-metal-standing-seam-modern-home.jpg" alt="Modern home with dark standing seam metal roof" width="900" height="500" loading="lazy">
-          <img class="project-photo square fade-in" src="assets/images/gallery/roofing-commercial-flat-white-membrane.jpg" alt="Commercial flat roof with new white reflective membrane" width="1200" height="900" loading="lazy">
+          <img class="project-photo square fade-in" src="assets/images/gallery/roofing-cedar-shake-modern-home.jpg" alt="Modern home with a dark-stained cedar shake roof" width="900" height="500" loading="lazy">
+          <img class="project-photo square fade-in" src="assets/images/gallery/roofing-commercial-flat-liquid-applied.jpg" alt="Commercial flat roof with new liquid applied membrane" width="1200" height="900" loading="lazy">
           <img class="project-photo square fade-in" src="assets/images/gallery/roofing-shingle-stone-farmhouse-dormers.jpg" alt="Stone farmhouse with new architectural shingle roof and copper-capped dormers" width="626" height="640" loading="lazy">
           <img class="project-photo square fade-in" src="assets/images/gallery/roofing-cedar-shake-installation-crew.jpg" alt="Nu-Fix crew member installing cedar shake shingles near a skylight" width="1280" height="960" loading="lazy">
         </div>
@@ -405,7 +395,7 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-brand">
-        <img src="assets/images/nufix-logo.png" alt="Nu-Fix, LLC" width="150" height="75">
+        <img src="assets/images/nufix-logo.png" alt="Nu-Fix, LLC" width="133" height="148">
         <p>Building maintenance and restoration for homeowners and facility managers across PA, NJ, and DE. In business 35 years.</p>
       </div>
       <div>
@@ -413,6 +403,7 @@
         <ul>
           <li><a href="/services/">All Services</a></li>
           <li><a href="/services/roofing-repair/">Roofing Repair</a></li>
+          <li><a href="/residential/">Residential</a></li>
           <li><a href="/commercial/">Commercial</a></li>
           <li><a href="/service-areas/">Service Areas</a></li>
         </ul>
@@ -422,6 +413,7 @@
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/gallery/">Gallery</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
       <div>
