@@ -375,7 +375,7 @@ p.sub { color: var(--color-text-muted); font-size: var(--text-md); }
 
 /* REAL PROJECT PHOTOS */
 .project-photo {
-  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
   border-radius: var(--radius-lg); display: block;
 }
 .project-photo.square { aspect-ratio: 1 / 1; }
@@ -458,16 +458,17 @@ figure.gallery-figure figcaption {
 
 /* 11. FOOTER */
 .site-footer { background: var(--color-blue-dark); color: rgba(255,255,255,0.85); }
-.footer-top { padding: var(--space-2xl) 0; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--space-xl); }
+.footer-top { padding: var(--space-2xl) 24px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--space-xl); }
 @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .footer-top { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .footer-bottom .container { flex-direction: column; align-items: center; justify-content: center; } }
 .footer-brand img { height: 148px; width: auto; margin-bottom: var(--space-md); }
 .footer-brand p { font-size: var(--text-sm); color: rgba(255,255,255,0.7); }
 .site-footer h4 { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: var(--text-sm); color: var(--color-gold); margin-bottom: var(--space-md); }
 .site-footer ul li { margin-bottom: 10px; font-size: var(--text-sm); }
 .site-footer a:hover { color: var(--color-gold); }
 .footer-bottom { background: var(--color-black); padding: var(--space-md) 0; }
-.footer-bottom .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: var(--text-xs); color: rgba(255,255,255,0.6); }
+.footer-bottom .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; text-align: center; font-size: var(--text-xs); color: rgba(255,255,255,0.6); }
 
 /* 12. SCROLL ANIMATION */
 .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
