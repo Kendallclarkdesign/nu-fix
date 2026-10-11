@@ -126,10 +126,9 @@
           <div class="card fade-in">
             <div class="form-success" role="alert" aria-live="polite">Thanks. Your request has been sent. We'll be in touch shortly.</div>
             <!-- Replace YOUR_FORM_ID with the real Formspree form ID before launch -->
-            <form id="contact-form" class="ajax-form" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form id="contact-form" name="contact-quote" class="ajax-form" novalidate method="POST" action="/contact/" data-netlify="true" data-netlify-honeypot="_gotcha">
+              <input type="hidden" name="form-name" value="contact-quote">
               <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <input type="hidden" name="_subject" value="New quote request from nu-fix.com">
-              <input type="hidden" name="_cc" value="service@nu-fix.com">
 
               <div class="form-group">
                 <label class="form-label" for="name">Full Name <span aria-hidden="true">*</span></label>

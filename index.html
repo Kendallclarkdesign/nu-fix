@@ -154,10 +154,9 @@
           <h2>Request a Free Quote</h2>
           <p class="panel-sub">Tell us what's going on. We respond fast.</p>
           <!-- Replace YOUR_FORM_ID with the real Formspree form ID before launch -->
-          <form class="ajax-form" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form name="quick-quote" class="ajax-form" novalidate method="POST" action="/contact/" data-netlify="true" data-netlify-honeypot="_gotcha">
+            <input type="hidden" name="form-name" value="quick-quote">
             <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <input type="hidden" name="_subject" value="New quick quote request from nu-fix.com">
-            <input type="hidden" name="_cc" value="service@nu-fix.com">
             <div class="form-group">
               <label class="form-label" for="hero-name">Full Name <span aria-hidden="true">*</span></label>
               <input class="form-input" type="text" id="hero-name" name="name" required autocomplete="name" placeholder="Jane Smith">

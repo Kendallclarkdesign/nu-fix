@@ -65,7 +65,7 @@ navLinks.forEach(link => {
   }
 });
 
-/* 5. FORM VALIDATION (submits to Formspree) — applies to every .ajax-form on the page */
+/* 5. FORM VALIDATION (submits to Netlify Forms) — applies to every .ajax-form on the page */
 document.querySelectorAll('form.ajax-form').forEach(contactForm => {
   contactForm.addEventListener('submit', (e) => {
     let valid = true;
@@ -95,7 +95,35 @@ document.querySelectorAll('form.ajax-form').forEach(contactForm => {
     const honeypot = contactForm.querySelector('input[name="_gotcha"]');
     if (honeypot && honeypot.value) valid = false;
 
-    if (!valid) e.preventDefault();
+    if (!valid) { e.preventDefault(); return; }
+
+    /* send via fetch so the visitor stays on the page; falls back to a normal POST if JS fails */
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const btnText = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(contactForm)).toString()
+    }).then(res => {
+      if (!res.ok) throw new Error('Form submit failed');
+      const done = document.createElement('div');
+      done.className = 'form-success';
+      done.setAttribute('role', 'status');
+      done.innerHTML = '<strong>Thank you. Your request is in.</strong><br>We will get back to you shortly. For urgent leaks, call <a href="tel:2676401778">267.640.1778</a>.';
+      contactForm.replaceWith(done);
+    }).catch(() => {
+      if (btn) { btn.disabled = false; btn.textContent = btnText; }
+      let err = contactForm.querySelector('.form-submit-error');
+      if (!err) {
+        err = document.createElement('p');
+        err.className = 'form-submit-error';
+        err.setAttribute('role', 'alert');
+        contactForm.appendChild(err);
+      }
+      err.innerHTML = 'Sorry, something went wrong. Please call <a href="tel:2676401778">267.640.1778</a> or email <a href="mailto:service@nu-fix.com">service@nu-fix.com</a>.';
+    });
   });
   contactForm.querySelectorAll('input, textarea, select').forEach(field => {
     field.addEventListener('input', () => {

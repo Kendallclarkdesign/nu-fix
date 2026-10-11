@@ -473,3 +473,8 @@ figure.gallery-figure figcaption {
 /* 12. SCROLL ANIMATION */
 .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* form success / error states */
+.form-success { padding: var(--space-lg); background: #fff; border-left: 4px solid var(--color-gold); border-radius: var(--radius-lg); color: var(--color-black); }
+.form-success a, .form-submit-error a { text-decoration: underline; }
+.form-submit-error { margin-top: var(--space-sm); color: #C4302B; font-size: var(--text-sm); }
