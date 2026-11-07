@@ -113,6 +113,7 @@ document.querySelectorAll('form.ajax-form').forEach(contactForm => {
       done.setAttribute('role', 'status');
       done.innerHTML = '<strong>Thank you. Your request is in.</strong><br>We will get back to you shortly. For urgent leaks, call <a href="tel:2676401778">267.640.1778</a>.';
       contactForm.replaceWith(done);
+      if (typeof fbq === 'function') fbq('track', 'Lead');
     }).catch(() => {
       if (btn) { btn.disabled = false; btn.textContent = btnText; }
       let err = contactForm.querySelector('.form-submit-error');
@@ -134,7 +135,13 @@ document.querySelectorAll('form.ajax-form').forEach(contactForm => {
   });
 });
 
-/* 6. GALLERY / SERVICE FILTER */
+/* 6. META PIXEL: count phone taps as Contact events (form success fires Lead above) */
+document.addEventListener('click', (e) => {
+  const tel = e.target.closest('a[href^="tel:"]');
+  if (tel && typeof fbq === 'function') fbq('track', 'Contact');
+});
+
+/* 7. GALLERY / SERVICE FILTER */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const filterCards = document.querySelectorAll('[data-category]');
 if (filterBtns.length && filterCards.length) {
