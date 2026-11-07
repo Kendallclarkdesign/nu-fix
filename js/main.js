@@ -65,6 +65,27 @@ navLinks.forEach(link => {
   }
 });
 
+/* 4b. AD SOURCE TRACKING: remember utm_* params from the first ad click and fill the hidden form fields */
+(function () {
+  const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  let saved = {};
+  try { saved = JSON.parse(sessionStorage.getItem('nf_utm') || '{}'); } catch (e) {}
+  const params = new URLSearchParams(window.location.search);
+  let changed = false;
+  keys.forEach(k => {
+    const v = params.get(k);
+    if (v) { saved[k] = v.slice(0, 200); changed = true; }
+  });
+  if (!saved.landing_page) { saved.landing_page = window.location.pathname; changed = true; }
+  if (changed) { try { sessionStorage.setItem('nf_utm', JSON.stringify(saved)); } catch (e) {} }
+  document.querySelectorAll('form.ajax-form').forEach(form => {
+    keys.concat('landing_page').forEach(k => {
+      const input = form.querySelector('input[name="' + k + '"]');
+      if (input && saved[k]) input.value = saved[k];
+    });
+  });
+})();
+
 /* 5. FORM VALIDATION (submits to Netlify Forms) — applies to every .ajax-form on the page */
 document.querySelectorAll('form.ajax-form').forEach(contactForm => {
   contactForm.addEventListener('submit', (e) => {
